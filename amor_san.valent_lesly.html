@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Lesly - Mi Amor Infinito</title>
+  <style>
+    /* Reinicio básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Cuerpo de la página con tipografía cursiva y fondo degradado */
+    body {
+      font-family: 'Brush Script MT', cursive;
+      background: linear-gradient(to bottom, #fff1e6, #ffe6f0);
+      color: #ff4081;
+      text-align: center;
+      overflow: hidden;
+    }
+    /* Estilo de las diapositivas */
+    .slide {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2.5s ease-in-out;
+      padding: 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Encabezados y párrafos */
+    h1 {
+      font-size: 4em;
+      color: #ff4081;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 2em;
+      margin: 20px auto;
+      max-width: 700px;
+      line-height: 1.8;
+      color: #6a1b9a;
+    }
+    /* Botón de navegación */
+    .button {
+      background-color: #f06292;
+      color: white;
+      font-size: 1.5em;
+      padding: 12px 30px;
+      border: none;
+      cursor: pointer;
+      margin-top: 30px;
+      border-radius: 10px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .button:hover {
+      background-color: #f8bbd0;
+      transform: scale(1.05);
+    }
+    /* Emojis con animación */
+    .emoji {
+      font-size: 4em;
+      margin: 20px;
+      animation: bounce 1.8s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    /* Fondo degradado animado para dar más brillo */
+    .background {
+      background: linear-gradient(145deg, #ffebf0, #ffe6c6, #e0f7fa);
+      background-size: 400% 400%;
+      animation: gradient 8s infinite;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Diapositiva 1 -->
+  <div class="slide background" id="slide1">
+    <h1>🌸 Para ti, Lesly 🌸</h1>
+    <p>Eres la magia que llena cada rincón de mi vida, mi niña. Tu sonrisa es el sol que ilumina mis días. 🌷💖</p>
+    <div class="emoji">💫💖🌷</div>
+    <button class="button" onclick="nextSlide()">Siguiente ➡</button>
+  </div>
+
+  <!-- Diapositiva 2 -->
+  <div class="slide background" id="slide2">
+    <h1>💕 Mi Amor Infinito 💕</h1>
+    <p>Amarte es mi destino, cuidarte es mi promesa. Eres mi princesita, el sueño hecho realidad. 🎁❤</p>
+    <div class="emoji">💖🌷✨</div>
+    <button class="button" onclick="nextSlide()">Siguiente ➡</button>
+  </div>
+
+  <!-- Diapositiva 3 -->
+  <div class="slide background" id="slide3">
+    <h1>✨ Siempre Juntos ✨</h1>
+    <p>No hay distancia ni tiempo que pueda separarnos, cachetoncita. Te llevo en mi corazón por siempre. 💞🌷</p>
+    <div class="emoji">💕🌸🌷💫</div>
+    <button class="button" onclick="nextSlide()">Siguiente ➡</button>
+  </div>
+
+  <!-- Diapositiva 4 -->
+  <div class="slide background" id="slide4">
+    <h1>🌟 Eres Mi Todo 🌟</h1>
+    <p>Lesly, cada latido de mi corazón te pertenece. Gracias por hacer mi mundo maravilloso y lleno de amor. 🌷💖</p>
+    <div class="emoji">🌟🌸🌷💕</div>
+    <button class="button" onclick="nextSlide()">Siguiente ➡</button>
+  </div>
+
+  <!-- Diapositiva 5 -->
+  <div class="slide background" id="slide5">
+    <h1>💞 Te Amo, Lesly 💞</h1>
+    <p>Con amor eterno, siempre a tu lado...<br><strong>tu niño chititito 💕</strong></p>
+    <div class="emoji">🌷💫💖</div>
+    <button class="button" onclick="restart()">Volver a empezar 🔁</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'flex' : 'none';
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function restart() {
+      currentSlide = 0;
+      showSlide(currentSlide);
+    }
+
+    // Mostrar el primer slide al cargar la página
+    showSlide(currentSlide);
+  </script>
+</body>
+</html>
